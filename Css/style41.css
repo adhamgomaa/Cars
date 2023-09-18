@@ -1,0 +1,58 @@
+/* start Agencies Cars */
+
+.agency {
+    margin-top: 150px;
+}
+
+.agency h1 {
+    margin-bottom: 60px;
+    font-size: 30pt;
+    color: #155472;
+}
+
+.agency h2, .opposed h2 {
+    background-color: #155472;
+    color: #FFF;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.Agencies-cars, .opposed-cars {
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+}
+
+.agency-photo, .opposed-photo {
+    width: 48%;
+    margin: 0 0 2% 2%;
+}
+
+.agency-photo img, .opposed-photo img {
+    width: 100%;
+}
+
+.agency-photo div, .opposed-photo div {
+    height: 80px;
+    background-color: #FFF;
+    margin-top: -4px;
+}
+
+.agency-photo div p:first-child, .opposed-photo div p:first-child {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.agency-photo div p:last-child, .opposed-photo div p:first-child {
+    padding-right: 10px;
+}
+
+/* end Agencies Cars */
+
+/* Start Opposed Cars */
+
+.opposed {
+    margin-top: 20px;
+}
+
+/* End Opposed Cars */

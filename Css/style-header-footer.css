@@ -1,0 +1,156 @@
+/*General*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+	scroll-behavior:smooth;
+}
+
+body {
+	font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+	font-family: 'Almarai', sans-serif;	
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* End General*/
+
+/* start header */
+
+.header {
+	position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+	z-index: 111;
+	background-color: #155472;
+	padding: 15px 0;
+}	
+
+.header .header-container {
+	display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header-container .header-logo h1 {
+  font-size: 30px;
+  font-family: 'Reem Kufi', sans-serif;
+  color: #FFF;
+}
+
+.header-list ul a {
+  display: inline-block;
+  padding-left: 15px;
+  color: #FFF;
+}
+
+@media (max-width: 767px) {
+  .header .header-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* end header */
+
+/* start footer */
+
+.footer {
+  margin-top: 50px;
+  background-color: #222;
+  color: #FFF;
+}
+
+.up-footer {
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.up-footer p {
+  padding: 20px;
+  font-size: 40px;
+  color: #FFF;
+}
+
+.main ul li {
+  display: inline-block;
+  padding: 10px;
+  color: #FFF;
+  transition: color .5s ease-in-out;
+}
+
+.main ul li:hover {
+  color: #155472;
+}
+
+.footer .under-footer {
+  background-color: #000;
+}
+
+.footer .text {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.under-footer .copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 20px;
+}
+
+.fonts .fa {
+  margin-left: 20px;
+  transition: color .5s ease-in-out;
+}
+
+.fonts .fa:hover {
+  color: #155472;
+}
+
+@media (max-width: 767px) {
+  .up-footer {
+    flex-direction: column;
+  }
+
+  .up-footer p {
+    font-size: 35px;
+  }
+
+  .main ul li {
+    font-size: 12px;
+  }
+
+  .under-footer .copy {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}
+
+/* end footer */

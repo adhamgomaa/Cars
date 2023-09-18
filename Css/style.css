@@ -1,0 +1,648 @@
+/*General*/
+
+* {
+    box-sizing: border-box;
+    margin: 0 ;
+    padding: 0 ;
+}
+
+html {
+	scroll-behavior:smooth;
+}
+
+body {
+	font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+	font-family: 'Almarai', sans-serif;	
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol, p, h1, * {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* End General*/
+
+/* media query for large screen */
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1840px;
+  }
+}
+
+/* media query for large screen */
+
+@media (max-width: 767px) {
+  .offers .offer-header,
+  .brand .brand-header,
+  .new-car .car-header {
+    text-align: center;
+  }
+}
+/* start loading page */
+
+#loading {
+	background-color: #17607d;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 11111;
+	margin-top: 0px;
+	top: 0px;
+}
+
+#loading-center {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	}
+
+#loading-center-absolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 200px;
+	width: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+  transform: rotate(-135deg);
+}
+
+.object {
+	border-radius: 50% 50% 50% 50%;
+	position: absolute;
+	border-top: 5px solid #FFF;
+	border-bottom: 5px solid transparent;
+	border-left:  5px solid #FFF;
+	border-right: 5px solid transparent;
+	animation: animate 2s infinite;	
+}
+
+#object_one {
+	left: 75px;
+	top: 75px;
+	width: 50px;
+	height: 50px;
+}
+
+#object_two {
+	left: 65px;
+	top: 65px;
+	width: 70px;
+	height: 70px;
+  animation-delay: 0.2s;
+}
+
+#object_three {
+	left: 55px;
+	top: 55px;
+	width: 90px;
+	height: 90px;
+  animation-delay: 0.4s;
+}
+
+#object_four {
+	left: 45px;
+	top: 45px;
+	width: 110px;
+	height: 110px;
+  animation-delay: 0.6s;
+}	
+
+@keyframes animate {
+	
+  50% {
+    -ms-transform: rotate(360deg) scale(0.8); 
+    -webkit-transform: rotate(360deg) scale(0.8); 
+    transform: rotate(360deg) scale(0.8); 
+  }	
+
+}
+
+/* end loading page */
+
+/* start header */
+
+.header {
+	position: fixed;
+  right: 0;
+  left: 0;
+  top:0;
+	z-index: 111;
+	transition: background-color .5s ease;
+	padding: 15px 0;
+  background-color: #FFF;
+}	
+
+.header .header-container {
+	display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header-container .header-logo h1 {
+  font-size: 30px;
+  font-family: 'Reem Kufi', sans-serif;
+  color: #000;
+  font-weight: 600;
+}
+
+.header-list ul a {
+  display: inline-block;
+  padding-left: 15px;
+  color: black;
+}
+
+@media (max-width: 767px) {
+  .header .header-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* end header */
+
+/* Slide Image */
+
+.carousel {position: relative;}
+
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}	
+
+.carousel .text-image {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  text-align: center;
+  color: #FFF;
+}
+
+.carousel .text-image .text {
+  display: block;
+  color: #FFF;
+  font-size: 30px;
+}
+
+.carousel .text-image .bold600 {
+  font-weight: 600;
+  font-size: 35px;
+}
+
+.carousel .text-image .bold800 {
+  font-weight: 800;
+  font-size: 50px;
+}
+
+.carousel .text-image .bold300 {font-weight: 300;}
+
+.carousel .text-image .discount {
+  color: #155472;
+  font-weight: 900;
+  font-size: 60px;
+}
+
+.carousel .text-image .btn {
+  font-weight: bold;
+  background: #155472;
+  color: #FFF;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.carousel-item {
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+} 
+
+.carousel-image1 {
+  background-image: url(../img/Marceds.jpg);
+  background-position: center;
+}
+
+.carousel-image2 {
+  background-image: url(../img/BMW.jpg);
+  background-position: center;
+}
+
+.carousel-image3 {
+  background-image: url(../img/Range\ Rover.jpg);
+  background-position: center;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+  background: #155472;
+  opacity: 1;
+}
+
+@media (max-width: 539px) {
+  .carousel .text-image .text {
+    font-size: 15px;
+  }
+
+  .carousel .text-image .bold600 {
+    font-size: 20px;
+  }
+
+  .carousel .text-image .bold800 {
+    font-size: 30px;
+  }
+
+  .carousel .text-image .discount {
+    font-size: 30px;
+  }
+
+  .carousel .text-image {
+    transform: translate(-50%, 50%);
+  }
+}
+@media (min-width: 540px) and (max-width: 575px) {
+  .carousel .text-image .text {
+    font-size: 20px;
+  }
+
+  .carousel .text-image .bold600 {
+    font-size: 25px;
+  }
+
+  .carousel .text-image .bold800 {
+    font-size: 35px;
+  }
+
+  .carousel .text-image .discount {
+    font-size: 35px;
+  }
+
+  .carousel .text-image {
+    transform: translate(-50%, 50%);
+  }
+}
+
+/* Slide Image */
+
+/* start offers */
+
+.offers {
+  margin-top: 50px;
+  display: block;
+}
+
+.offers .offer-header, .brand .brand-header, .new-car .car-header {
+  margin-bottom: 20px;
+  font-size: 45px;
+  font-weight: bold;
+  color: #155472;
+}
+
+.image-offer {
+  display: flex;
+  position: relative;
+}
+
+.image-offer .big-offer {
+  width: 50%;
+  position: relative;
+}
+
+.big-offer .Honda {
+  position: absolute;
+  top: 35px;
+  right: 30px;
+  font-size: 35px;
+  color: initial;
+}
+
+.big-offer .Honda-offer {
+  position: absolute;
+  left: 0;
+  font-size: 40px;
+  background-color: #155472;
+  color: #FFF;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.big-offer img {
+  width: 100%;
+}
+
+.image-offer .small-offer {
+  width: 50%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.small-offer .photo {
+  width: 48%;
+  border: 2px solid #155472;
+  margin-bottom: 18px;
+  position: relative;
+  margin-left: 11px;
+}
+
+.photo img {width: 100%;}
+
+.photo .photo-offer {
+  position: absolute;
+  left: 0;
+  font-size: 25px;
+  background: #155472;
+  color: #FFF;
+  font-weight: bolder;
+  padding: 5px;
+}
+
+@media (max-width: 1199px) {
+
+  .image-offer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .image-offer .big-offer {
+    width: 100%;
+  }
+
+  .image-offer .small-offer {
+    width: 100%;
+    margin-top: 15px;
+    margin-right: 0;
+    justify-content: space-between;
+  }
+
+  .small-offer .photo {
+    margin-left: 0;
+  }
+}
+
+/* end offers */
+
+/* start brand */
+
+.brand {
+  position: relative;
+  margin-top: 50px;
+}
+
+.main-brand {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.main-brand .photo-brand {
+  border-left: 1px solid #e5e5e7;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.photo-brand img {
+  width: 185px;
+  padding: 20px;
+  margin: 0 auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: .3s;
+}
+
+.photo-brand:hover img {
+  filter: grayscale(0);
+}  
+
+.photo-brand .text-brand {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%, -50%);
+  color: initial;
+  font-size: 19px;
+}
+
+.photo-brand:hover .text-brand {
+  color: #155472;
+  font-weight: bold;
+}
+
+/* end brand */
+
+/* start new-car */
+
+.new-car {
+  margin-top: 40px;
+  background-color: #f2f2f2;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-car {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main-car .car {
+  padding: 15px;
+}
+
+.car img {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.car .text-car {
+  font-size: 21px;
+  font-weight: bold;
+  color: initial;
+}
+
+.car hr {
+  color: #333;
+}
+
+.car ul li {
+  list-style: none;
+  line-height: 2;
+  font-size: 18px;
+  color: initial;
+}
+
+.car .price {
+  background-color: #155472;
+  color: #FFF;
+  position: relative;
+  height: 40px;
+  margin-top: 50px;
+}
+
+.price .text-price {
+  font-size: 10px;
+  position: absolute;
+  right: 4px;
+}
+
+.price .money {
+  font-weight: bold;
+  position: absolute;
+  right: 33px;
+  top: 7px;
+  font-size: 19px;
+  text-decoration: line-through;
+}
+
+.price .price-original {
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  color: white;
+  background: black;
+  height: 40px;
+  width: 100px;
+  font-size: 13px;
+  padding: 2px;
+}
+
+.car:hover .text-car {
+  color: #155472;
+}
+
+/* Next & previous buttons */
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: #155472;
+  font-weight: bold;
+  font-size: 35px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+
+.next {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* end new-car */
+
+/* start footer */
+
+.footer {
+  margin-top: 50px;
+  background-color: #222;
+  color: #FFF;
+}
+
+.up-footer {
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.up-footer p {
+  padding: 20px;
+  font-size: 40px;
+  color: #FFF;
+}
+
+.main ul li {
+  display: inline-block;
+  padding: 10px;
+  color: #FFF;
+  transition: color .5s ease-in-out;
+}
+
+.main ul li:hover {
+  color: #155472;
+}
+
+.footer .under-footer {
+  background-color: #000;
+}
+
+.footer .text {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.under-footer .copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+.under-footer .copy + p {
+  font-size: 20px;
+}
+
+.fonts .fa {
+  font-size: 20px;
+  margin-left: 20px;
+  transition: color .5s ease-in-out;
+}
+
+.fonts .fa:hover {
+  color: #155472;
+}
+
+@media (max-width: 767px) {
+  .up-footer {
+    flex-direction: column;
+  }
+
+  .up-footer p {
+    font-size: 35px;
+  }
+
+  .main ul li {
+    font-size: 12px;
+  }
+
+  .under-footer .copy {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}
+
+/* end footer */
