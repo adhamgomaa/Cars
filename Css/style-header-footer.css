@@ -124,12 +124,14 @@ ul li {
   padding: 20px;
 }
 
-.fonts .fa {
+.fonts i {
+  font-size: 20px;
   margin-left: 20px;
+  cursor: pointer;
   transition: color .5s ease-in-out;
 }
 
-.fonts .fa:hover {
+.fonts i:hover {
   color: #155472;
 }
 

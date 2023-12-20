@@ -17,8 +17,9 @@ body {
 	font-family: 'Almarai', sans-serif;	
 }
 
-a {
+a, a:hover {
   text-decoration: none;
+  color: initial;
 }
 
 ul, ol, p, h1, * {
@@ -315,8 +316,10 @@ ul li {
   display: block;
 }
 
-.offers .offer-header, .brand .brand-header, .new-car .car-header {
-  margin-bottom: 20px;
+.offers .offer-header,
+.brand .brand-header,
+.new-car .car-header {
+  margin-bottom: 50px;
   font-size: 45px;
   font-weight: bold;
   color: #155472;
@@ -460,56 +463,118 @@ ul li {
   margin-top: 40px;
   background-color: #f2f2f2;
   position: relative;
-  overflow: hidden;
+  padding: 30px 0;
 }
 
-.main-car {
+/* .new-car .main-car .slide-car {
+
+} */
+
+.new-car .content {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  gap: 30px;
 }
 
-.main-car .car {
-  padding: 15px;
+.new-car .content i {
+  cursor: pointer;
+  font-size: 25px;
+  background: #155472;
+  padding: 10px;
+  border-radius: 25%;
+  color: #FFF;
 }
 
-.car img {
-  margin-bottom: 20px;
-  display: block;
+.new-car .content .main-car {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: 0;
 }
 
-.car .text-car {
-  font-size: 21px;
+
+
+.new-car .content .main-car::-webkit-scrollbar {
+  display: none;
+}
+
+.new-car .main-car .slider-car .car {
+  width: fit-content;
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+
+.new-car .main-car .slider-car {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 4) - 12px);
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 1399px) {
+  .new-car .main-car .slider-car {
+    grid-auto-columns: calc((100% / 3) - 12px);
+  }
+}
+
+@media (max-width: 1199px) {
+  .new-car .main-car .slider-car {
+    grid-auto-columns: calc((100% / 2) - 12px);
+  }
+}
+
+@media (max-width: 767px) {
+  .new-car .main-car .slider-car .car {
+    scroll-snap-align: center;
+  }
+  .new-car .main-car .slider-car {
+    grid-auto-columns: calc(100% - 12px);
+  }
+}
+
+
+.new-car .main-car .slider-car .car .content-car {
+  border-bottom: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.new-car .main-car .slider-car .car .content-car .text-car {
+  margin-top: 20px;
+  font-size: 20px;
   font-weight: bold;
   color: initial;
+  transition: color 0.3s ease;
 }
 
-.car hr {
-  color: #333;
+.new-car .main-car .slider-car .car:hover .content-car .text-car {
+  color: #155472;
 }
 
-.car ul li {
-  list-style: none;
-  line-height: 2;
+.new-car .main-car .slider-car .car ul {
+  padding: 20px 0;
+}
+
+.new-car .main-car .slider-car .car ul li {
   font-size: 18px;
-  color: initial;
 }
 
-.car .price {
+.new-car .main-car .slider-car .car .price {
   background-color: #155472;
   color: #FFF;
   position: relative;
   height: 40px;
-  margin-top: 50px;
 }
 
-.price .text-price {
+.new-car .main-car .slider-car .car .price .text-price {
   font-size: 10px;
   position: absolute;
   right: 4px;
 }
 
-.price .money {
+.new-car .main-car .slider-car .car .price .money {
   font-weight: bold;
   position: absolute;
   right: 33px;
@@ -518,7 +583,7 @@ ul li {
   text-decoration: line-through;
 }
 
-.price .price-original {
+.new-car .main-car .slider-car .car .price .price-original {
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -527,34 +592,7 @@ ul li {
   height: 40px;
   width: 100px;
   font-size: 13px;
-  padding: 2px;
-}
-
-.car:hover .text-car {
-  color: #155472;
-}
-
-/* Next & previous buttons */
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  color: #155472;
-  font-weight: bold;
-  font-size: 35px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-
-.next {
-  left: 0;
-  border-radius: 3px 0 0 3px;
+  text-align: center;
 }
 
 /* end new-car */
@@ -615,13 +653,14 @@ ul li {
   font-size: 20px;
 }
 
-.fonts .fa {
+.fonts i {
   font-size: 20px;
   margin-left: 20px;
+  cursor: pointer;
   transition: color .5s ease-in-out;
 }
 
-.fonts .fa:hover {
+.fonts i:hover {
   color: #155472;
 }
 

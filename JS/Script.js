@@ -16,8 +16,7 @@ document.addEventListener('scroll',() => {
         if (scroll_position > 30) {
             header.style.backgroundColor = '#155472';
             logo.style.color = '#FFF';
-            list[i].style.color = "#FFF"
-    
+            list[i].style.color = "#FFF";
         } else {
             header.style.backgroundColor = '#FFF';
             logo.style.color = '#000';
@@ -25,5 +24,18 @@ document.addEventListener('scroll',() => {
         }
     }
 });
+
+// slider for new car
+let arrowBtn = document.querySelectorAll(".new-car .content i");
+let mainCar = document.querySelector(".new-car .content .main-car");
+let width = mainCar.querySelector(".new-car .content .main-car .slider-car .car").offsetWidth;
+
+arrowBtn.forEach((e) => {
+    e.addEventListener("click", () => {
+        mainCar.scrollLeft += e.id === "left" ? -width : width;
+    });
+});
+
+
 
 
