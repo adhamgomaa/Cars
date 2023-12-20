@@ -12,22 +12,17 @@ var list = document.querySelectorAll('.header-list ul a');
 
 document.addEventListener('scroll',() => {
     var scroll_position = window.scrollY;
-    if (scroll_position > 30) {
-        header.style.backgroundColor = '#155472';
-        logo.style.color = '#FFF';
-        list[0].style.color = '#FFF';
-        list[1].style.color = '#FFF';
-        list[2].style.color = '#FFF';
-        list[3].style.color = '#FFF';
-        list[4].style.color = '#FFF';
-    } else {
-        header.style.backgroundColor = '#FFF';
-        logo.style.color = '#000';
-        list[0].style.color = '#000';
-        list[1].style.color = '#000';
-        list[2].style.color = '#000';
-        list[3].style.color = '#000';
-        list[4].style.color = '#000';
+    for(let i = 0; i < list.length; i++) {
+        if (scroll_position > 30) {
+            header.style.backgroundColor = '#155472';
+            logo.style.color = '#FFF';
+            list[i].style.color = "#FFF"
+    
+        } else {
+            header.style.backgroundColor = '#FFF';
+            logo.style.color = '#000';
+            list[i].style.color = '#000';
+        }
     }
 });
 
