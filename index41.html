@@ -23,7 +23,21 @@
         <link rel="stylesheet" href="Css/style-header-footer.css">
         <!-- End Css Files -->
     </head>
-    <body>
+    <body onload="load()">
+        <!-- Start loading page -->
+        <div id="loading">
+            <div id="loading-center">
+            <div id="loading-center-absolute">
+            <div class="object" id="object_four"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_one"></div>
+            
+            </div>
+            </div>
+        </div>
+        <!-- End loading page -->
+
         <!-- First Header -->
         <div class="header" style="background-color: #155472;">
             <div class="container">
@@ -152,5 +166,13 @@
                 </div>
             </div>
         <!-- End Footer -->
+    <script>
+        // loading page
+        var loading = document.getElementById('loading');
+
+        function load(){
+            loading.style.display= "none";
+        }
+    </script>
     </body>
 </html>
