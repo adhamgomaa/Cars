@@ -12,8 +12,8 @@ html {
 
 body {
 	font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
+  line-height: 1.42857143;
+  color: #333;
 	font-family: 'Almarai', sans-serif;	
 }
 
@@ -42,6 +42,14 @@ ul li {
 }
 
 /* media query for large screen */
+
+@media (max-width: 575px) {
+  .offers .offer-header,
+  .brand .brand-header,
+  .new-car .car-header {
+    font-size: 25px !important;
+  }
+}
 
 @media (max-width: 767px) {
   .offers .offer-header,
@@ -165,6 +173,14 @@ ul li {
   color: black;
 }
 
+@media (max-width: 575px) {
+    .header-list ul a {
+    padding-left: 10px;
+  }
+    .header-list ul a:last-child {
+    padding-left: 0px;
+  }
+}
 @media (max-width: 767px) {
   .header .header-container {
     flex-direction: column;
@@ -176,7 +192,7 @@ ul li {
 
 /* Slide Image */
 
-.carousel {position: relative;}
+.slider-image {position: relative;}
 
 .overlay {
 	position: absolute;
@@ -184,126 +200,168 @@ ul li {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0.4);
-  z-index: 5;
+	background: rgb(56 56 56 / 30%);
+  z-index: 2;
 }	
 
-.carousel .text-image {
-  width: 100%;
+.slider-image .slider {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.slider-image .slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-image .slider .image {
+  flex: 1 0 100%;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  scroll-snap-align: start;
+} 
+
+.slider-image .slider .image.img-1 {
+  background-image: url(../img/Marceds.jpg);
+}
+
+.slider-image .slider .image.img-2 {
+  background-image: url(../img/BMW.jpg);
+}
+
+.slider-image .slider .image.img-3 {
+  background-image: url(../img/Range_Rover.jpeg);
+}
+
+.slider-image .arrow {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  background-color: #155472;
+  opacity: 1;
+  z-index: 3;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  color: #FFF;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-image .arrow:hover {
+  background-color: rgb(21 84 114 / 80%);
+}
+
+.slider-image #right {
+  right: 1%;
+}
+
+.slider-image #left{
+  left: 1%;
+}
+
+.slider-image .slider .image .text-image {
+  width: fit-content;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9;
   text-align: center;
   color: #FFF;
+  z-index: 3;
 }
 
-.carousel .text-image .text {
+.slider-image .slider .image .text-image .text {
   display: block;
   color: #FFF;
   font-size: 30px;
 }
 
-.carousel .text-image .bold600 {
+.slider-image .slider .image .text-image .bold600 {
   font-weight: 600;
   font-size: 35px;
 }
 
-.carousel .text-image .bold800 {
+.slider-image .slider .image .text-image .bold800 {
   font-weight: 800;
   font-size: 50px;
 }
 
-.carousel .text-image .bold300 {font-weight: 300;}
+.slider-image .slider .image .text-image .bold300 {font-weight: 300;}
 
-.carousel .text-image .discount {
+.slider-image .slider .image .text-image .discount {
   color: #155472;
   font-weight: 900;
   font-size: 60px;
 }
 
-.carousel .text-image .btn {
+.slider-image .slider .image .text-image .btn {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 16px;
   font-weight: bold;
   background: #155472;
   color: #FFF;
   padding: 10px;
   margin-top: 20px;
+  line-height: inherit;
+  cursor: pointer;
 }
 
-.carousel-item {
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  position: relative;
-} 
-
-.carousel-image1 {
-  background-image: url(../img/Marceds.jpg);
-  background-position: center;
+.slider-image .slider .image.img-1 .text-image a .btn i {
+  margin-right: 15px;
+  animation: rightLeft 0.5s ease infinite;
 }
 
-.carousel-image2 {
-  background-image: url(../img/BMW.jpg);
-  background-position: center;
-}
-
-.carousel-image3 {
-  background-image: url(../img/Range\ Rover.jpg);
-  background-position: center;
-}
-
-.carousel-control-next, .carousel-control-prev {
-  position: absolute;
-  top: 50%;
-  bottom: 50%;
-  width: 40px;
-  height: 40px;
-  border-radius: 20%;
-  background: #155472;
-  opacity: 1;
-}
-
-@media (max-width: 539px) {
-  .carousel .text-image .text {
-    font-size: 15px;
+@keyframes rightLeft {
+  0%,100% {
+    transform: translateX(8px);
   }
-
-  .carousel .text-image .bold600 {
-    font-size: 20px;
-  }
-
-  .carousel .text-image .bold800 {
-    font-size: 30px;
-  }
-
-  .carousel .text-image .discount {
-    font-size: 30px;
-  }
-
-  .carousel .text-image {
-    transform: translate(-50%, 50%);
+  50% {
+    transform: translateX(0px);
   }
 }
-@media (min-width: 540px) and (max-width: 575px) {
-  .carousel .text-image .text {
-    font-size: 20px;
+
+.slider-image .slider .image.img-2 .text-image a .btn,
+.slider-image .slider .image.img-3 .text-image a .btn {
+  width: 170px;
+}
+
+@media (max-width: 575px) {
+  .slider-image .slider .image .text-image .text {
+    font-size: 14px;
   }
 
-  .carousel .text-image .bold600 {
+  .slider-image .slider .image .text-image .bold600 {
+    font-size: 18px;
+  }
+
+  .slider-image .slider .image .text-image .bold800 {
     font-size: 25px;
   }
 
-  .carousel .text-image .bold800 {
-    font-size: 35px;
+  .slider-image .slider .image .text-image .discount {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .slider-image .slider .image .text-image .text {
+    font-size: unset;
   }
 
-  .carousel .text-image .discount {
-    font-size: 35px;
+  .slider-image .slider .image .text-image .bold600 {
+    font-size: unset;
   }
 
-  .carousel .text-image {
-    transform: translate(-50%, 50%);
+  .slider-image .slider .image .text-image .bold800 {
+    font-size: 20px;
   }
 }
 
@@ -383,6 +441,20 @@ ul li {
   color: #FFF;
   font-weight: bolder;
   padding: 5px;
+}
+
+@media (max-width: 575px) {
+    .big-offer .Honda {
+    top: 10px;
+    right: 5px;
+    font-size: 20px;
+  }
+    .big-offer .Honda-offer {
+    font-size: 20px;
+  }
+    .photo .photo-offer {
+    font-size: unset;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -488,10 +560,9 @@ ul li {
 }
 
 .new-car .content .main-car {
-  overflow: auto;
+  overflow: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  scrollbar-width: 0;
 }
 
 .new-car .content .main-car::-webkit-scrollbar {
@@ -499,7 +570,6 @@ ul li {
 }
 
 .new-car .main-car .slider-car .car {
-  width: fit-content;
   cursor: pointer;
   scroll-snap-align: start;
 }
@@ -532,7 +602,6 @@ ul li {
     grid-auto-columns: calc(100% - 12px);
   }
 }
-
 
 .new-car .main-car .slider-car .car .content-car {
   border-bottom: 1px solid #333;
@@ -593,6 +662,33 @@ ul li {
   width: 100px;
   font-size: 13px;
   text-align: center;
+}
+
+@media (max-width: 575px) {
+    .new-car .main-car .slider-car .car .content-car .text-car {
+    font-size: unset;
+  }
+  
+  .new-car .main-car .slider-car .car ul li {
+    font-size: unset;
+  }
+
+  .new-car .main-car .slider-car .car .price {
+    height: 80px;
+  }
+
+  .new-car .main-car .slider-car .car .price .money {
+    top: 8px;
+    font-size: unset;
+  }
+
+  .new-car .main-car .slider-car .car .price .price-original {
+    top: 40px;
+    height: 40px;
+    width: 100%;
+    font-size: 12px;
+    padding-top: 5px;
+  }
 }
 
 /* end new-car */
@@ -664,6 +760,12 @@ ul li {
   color: #155472;
 }
 
+@media (max-width: 575px) {
+    .footer .text {
+    font-size: 25px;
+  }
+}  
+
 @media (max-width: 767px) {
   .up-footer {
     flex-direction: column;
@@ -675,6 +777,7 @@ ul li {
 
   .main ul li {
     font-size: 12px;
+    padding: 10px 5px;
   }
 
   .under-footer .copy {

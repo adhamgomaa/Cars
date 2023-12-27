@@ -6,8 +6,14 @@
 
 .agency h1 {
     margin-bottom: 60px;
-    font-size: 30pt;
+    font-size: 30px;
     color: #155472;
+}
+
+@media (max-width: 575px) {
+    .agency h1 {
+        font-size: 25px;
+    }
 }
 
 .agency h2, .opposed h2 {

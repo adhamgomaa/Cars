@@ -25,6 +25,25 @@ document.addEventListener('scroll',() => {
     }
 });
 
+// slider image for home
+let arrows = document.querySelectorAll(".slider-image .arrow");
+let slider = document.querySelector(".slider-image .slider");
+let images = document.querySelectorAll(".slider-image .slider .image");
+let imageWidth = document.querySelector(".slider-image .slider .image").offsetWidth;
+
+arrows.forEach(e => {
+    e.addEventListener("click", () => {
+        slider.scrollLeft += e.id === "left" ? -imageWidth : imageWidth;
+    })
+    setInterval(() => {
+        if (slider.scrollLeft === -(slider.offsetWidth * (images.length - 1))) {
+            slider.scrollLeft = 0;
+        } else {
+            slider.scrollLeft += -imageWidth;
+        }
+    }, 10000)
+})
+
 // slider for new car
 let arrowBtn = document.querySelectorAll(".new-car .content i");
 let mainCar = document.querySelector(".new-car .content .main-car");
