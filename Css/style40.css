@@ -124,13 +124,16 @@
 
 .call button {
     outline: 0;
+    border: none;
     width: 40%;
-    font-size: 25pt;
-    padding: 5px;
+    border-radius: 6px;
+    font-size: 35px;
+    padding: 10px;
+	margin: auto;
     background-color: #155472;
     color: #FFF;
     cursor: pointer;
-    border: none;
+	font-family: inherit;
 }
 
 /* end call us */

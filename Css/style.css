@@ -31,14 +31,51 @@ ul li {
   list-style: none;
 }
 
+img {
+  vertical-align: middle;
+}
+
 /* End General*/
 
 /* media query for large screen */
 
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
 @media (min-width: 1920px) {
   .container {
     max-width: 1840px;
   }
+}
+
+.container {
+  width: 100%;
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* media query for large screen */
@@ -307,6 +344,7 @@ ul li {
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
+  font-family: inherit;
   background: #155472;
   color: #FFF;
   padding: 10px;
@@ -412,9 +450,7 @@ ul li {
   font-weight: bold;
 }
 
-.big-offer img {
-  width: 100%;
-}
+.big-offer img {width: 100%;}
 
 .image-offer .small-offer {
   width: 50%;
@@ -668,6 +704,7 @@ ul li {
 @media (max-width: 575px) {
     .new-car .main-car .slider-car .car .content-car .text-car {
     font-size: unset;
+    text-align: center;
   }
   
   .new-car .main-car .slider-car .car ul li {
@@ -676,10 +713,19 @@ ul li {
 
   .new-car .main-car .slider-car .car .price {
     height: 80px;
+    text-align: center;
+  }
+
+  .new-car .main-car .slider-car .car .price .text-price {
+    position: relative;
+    right: unset;
+    font-size: unset;
   }
 
   .new-car .main-car .slider-car .car .price .money {
-    top: 8px;
+    position: relative;
+    right: unset;
+    top: unset;
     font-size: unset;
   }
 
