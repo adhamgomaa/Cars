@@ -597,7 +597,7 @@ img {
 }
 
 .new-car .content .main-car {
-  overflow: hidden;
+  overflow: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
